@@ -16,7 +16,8 @@ public class W17Jan19 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print("hello world");
+        GameOfWar theGame = new GameOfWar();
+        theGame.playTheGame();
     }
     
 }

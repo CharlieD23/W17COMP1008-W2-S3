@@ -65,6 +65,9 @@ public class GameOfWar {
         Card p1Card = p1Hand.remove(0);
         Card p2Card = p2Hand.remove(0);
         
+        System.out.printf("Player 1: %s, cards in hand: %d", p1Card, p1Hand.size()+1);
+        System.out.printf("\tPlayer 2: %s, cards in hand: %d%n", p2Card, p2Hand.size()+1);
+        
         //if player 1 wins
         if(p1Card.getFaceValue() > p2Card.getFaceValue())
         {
@@ -119,13 +122,16 @@ public class GameOfWar {
         warPile.add(p2Hand.remove(0));
         Card p2Card = p2Hand.remove(0);
         
+        System.out.printf("%n%n~~~~~~~~~ WAR !!! ~~~~~~~~~%n");
+        System.out.printf("Player 1: %s, cards in hand: %d", p1Card, p1Hand.size()+1);
+        System.out.printf("\tPlayer 2: %s, cards in hand: %d%n", p2Card, p2Hand.size()+1);       
+        
         //check for player 1 to win
         if(p1Card.getFaceValue() > p2Card.getFaceValue())
         {
             p1Hand.addAll(warPile);
             p1Hand.add(p1Card);
             p1Hand.add(p2Card);
-            return;
         }
         //check for player 1 to win
         else if(p2Card.getFaceValue() > p1Card.getFaceValue())
@@ -133,7 +139,6 @@ public class GameOfWar {
             p2Hand.addAll(warPile);
             p2Hand.add(p1Card);
             p2Hand.add(p2Card);
-            return;
         }
         //otherwise another war happes
         else
