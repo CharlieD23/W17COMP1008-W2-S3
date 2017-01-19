@@ -1,6 +1,7 @@
 package w17jan19;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -37,4 +38,23 @@ public class DeckOfCards {
         }
         return deckString;
     }
-}
+    
+    /**
+     * This method will "shuffle" deck of cards, changing the current order
+     * of the cards
+     */
+    public void shuffle()
+    {
+        Collections.shuffle(deck);
+    }
+    
+    /**
+     * This method will "deal" the top card off the deck
+     * @return a Card object
+     */
+    public Card dealTopCard()
+    {
+        return deck.remove(0);
+    }
+    
+}   //end of class
